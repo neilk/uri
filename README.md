@@ -187,6 +187,10 @@ Extend the query -- supply query parameters to override or add to ours
 
 *Object*,  this URI object
 
+    var uri = new Uri('http://example.com/foo?a=b')
+    uri.extend( { a: 'c', x: 'y'});
+    console.log(uri.toString())   // http://example.com/foo?a=c&x=y 
+
 
 
 
