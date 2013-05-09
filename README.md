@@ -29,7 +29,9 @@ Dependencies: jQuery
 Parsing here is regex based, so may not work on all URIs, but is good enough for most.
 
 Given a URI like
-'http://usr:pwd@www.test.com:81/dir/dir.2/index.htm?q1=0&&test1&test2=&test3=value+%28escaped%29&r=1&r=2#top':
+
+    http://usr:pwd@www.test.com:81/dir/dir.2/index.htm?q1=0&&test1&test2=&test3=value+%28escaped%29&r=1&r=2#top
+
 The returned object will have the following properties:
 
      protocol  'http'
