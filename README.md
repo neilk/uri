@@ -12,7 +12,7 @@ Intended to compress very well if you use a JS-parsing minifier.
 
 Dependencies: jQuery
 
-Example:
+## Example
 
     var uri = new Uri('http://foo.com/mysite/mypage.php?quux=2');
 
@@ -50,10 +50,31 @@ The returned object will have the following properties:
 
 n.b. 'password' is not technically allowed for HTTP URIs, but it is possible with other
 sorts of URIs.
+
 You can modify the properties directly. Then use the toString() method to extract the
 full URI string again.
+
+## Relative Uris
+
+You can also generate "relative" URIs - these are primarily useful for URIs which share the same
+domain or protocol, not for normalizing a path like `../../index.html`.i
+
+The `UriRelative` constructor returns a `Uri` constructor, initialized with the properties of that
+Uri.
+
+    var ExampleComUri = new UriRelative('https://example.com/foo')
+    var x = new ExampleComUri({path:'/bar'});
+    console.log(x.toString());  // https://example.com/bar
+
+In a browser, the main `Uri` object is just initialized relative to the current document URL.
+
+
+
+## Credits
 
 Parsing based on parseUri 1.2.2 (c) Steven Levithan <stevenlevithan.com> MIT License
 http://stevenlevithan.com/demo/parseuri/js/
 
+Based on mediawiki.Uri.js, also primarily by Neil Kandalgaonkar and distributed with MediaWiki
+(http://mediawiki.org/).
  
