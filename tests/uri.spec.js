@@ -257,16 +257,6 @@
 
     });
 
-    describe("should handle protocol-relative URLs", function() {
-
-      it ("should create protocol-relative URLs with same protocol as document", function() {
-        var uriRel = UriRelative('glork://en.wiki.local/foo.php');
-        var uri = new uriRel('//en.wiki.local/w/api.php');
-        expect(uri.protocol).toEqual('glork');
-      });
-
-    });
-
     it("should throw error on no arguments to constructor", function() {
       expect(function() {
         var uri = new Uri();
@@ -295,11 +285,6 @@
       expect(function() {
         var uri = new Uri('foo.com/bar/baz', true);
       }).toThrow("Bad constructor arguments");
-    });
-
-    it("should normalize URI without protocol or // in loose mode", function() {
-      var uri = new Uri('foo.com/bar/baz', false);
-      expect(uri.toString()).toEqual('http://foo.com/bar/baz');
     });
 
   });
