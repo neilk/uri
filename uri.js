@@ -118,7 +118,7 @@
     function Uri(uri, options) {
       options = typeof options === 'object' ? options : { strictMode: !!options };
       options = $.extend({
-        strictMode: false,
+        strictMode: true,
         overrideKeys: false
       }, options);
 
